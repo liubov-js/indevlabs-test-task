@@ -1,0 +1,14 @@
+{
+  "name": "indevlabs-test-task",
+  "version": "1.0.0",
+  "description": "Technical Assessment JavaScript",
+  "main": "test.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Liubov Krivtsova",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}
