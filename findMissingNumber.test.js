@@ -10,14 +10,14 @@ test('missing number is 8', () => {
   expect(findMissingNumber([7, 9, 10, 11, 13])).toBe(8);
 });
 
-// if array does not have missing number, return undefined
+// if array does not have missing number, throw an error
 test('missing number does not exist', () => {
-  expect(findMissingNumber([1, 2, 3])).toBeUndefined();
+  expect(() => findMissingNumber([1, 2, 3])).toThrow();
 });
 
-// if array is empty, return undefined
+// if array is empty, throw an error
 test('array is empty', () => {
-  expect(findMissingNumber([])).toBeUndefined();
+  expect(() => findMissingNumber([])).toThrow();
 });
 
 // if argument is not an array, throw an error

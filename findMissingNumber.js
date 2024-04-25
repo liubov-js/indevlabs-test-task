@@ -3,18 +3,14 @@ function findMissingNumber(arr) {
     throw new Error('Please pass the array');
   }
 
-  let missingNumber;
-  const minNumber = Math.min(...arr);
-  const maxNumber = Math.max(...arr);
+  const sortedArr = arr.sort((a, b) => a - b);
+  const numberNextToMissing = sortedArr.find((num, i) => num - i !== sortedArr[0]);
 
-  for (let i = minNumber; i <= maxNumber; i++) {
-    if (!arr.includes(i)) {
-      missingNumber = i;
-      break;
-    }
+  if (!numberNextToMissing) {
+    throw new Error('Missing number does not exist');
   }
 
-  return missingNumber;
+  return numberNextToMissing - 1;
 }
 
 module.exports = findMissingNumber;
