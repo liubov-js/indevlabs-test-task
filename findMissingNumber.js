@@ -4,13 +4,15 @@ function findMissingNumber(arr) {
   }
 
   const sortedArr = arr.sort((a, b) => a - b);
-  const numberNextToMissing = sortedArr.find((num, i) => num - i !== sortedArr[0]);
+  let prevNum = sortedArr[0];
 
-  if (!numberNextToMissing) {
-    throw new Error('Missing number does not exist');
+  for (let i = 0; i < sortedArr.length; i++) {
+    if (sortedArr[i] !== prevNum) {
+      return prevNum;
+    } else {
+      prevNum++;
+    }
   }
-
-  return numberNextToMissing - 1;
 }
 
 module.exports = findMissingNumber;
